@@ -1,0 +1,21 @@
+.page {
+    width: 100vh;
+}
+
+.pirates-enter {
+    opacity: 0.2;
+}
+
+.pirates-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+
+.pirates-exit {
+    opacity: 1;
+}
+
+.pirates-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+}

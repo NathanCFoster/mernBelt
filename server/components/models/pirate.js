@@ -1,16 +1,44 @@
 const mongoose = require("mongoose");
 
-const AuthorSchema = new mongoose.Schema({
+const PirateSchema = new mongoose.Schema({
     name: {
         type:String,
         required: [
             true,
-            "Author's name is required!"
+            "Pirate's name is required!"
         ],
         minlength:[
             3,
             "Must be at least 3 characters!"
         ]
+    },
+    image: {
+        type: String,
+        required: [true, "Image is required!"]
+    },
+    numofchests: {
+        type: String,
+        required: [true, "A pirate needs his chests!"]
+    },
+    catchphrase: {
+        type: String,
+        required: [true, "A pirate needs at least one catchphrase!"]
+    },
+    position: {
+        type: String,
+        required: true
+    },
+    pegleg: {
+        type: Boolean,
+        required: true
+    },
+    eyepatch: {
+        type: Boolean,
+        required: true
+    },
+    hookhand: {
+        type: Boolean,
+        required: true
     }
 });
 
@@ -36,16 +64,8 @@ const UserSchema = new mongoose.Schema({
     favorites: [String]
 });
 
-const MessageSchema = new mongoose.Schema({
-    sentby: String,
-    message: String,
-    room: String
-})
-
-const Author = mongoose.model("Author", AuthorSchema);
+const Pirate = mongoose.model("Author", PirateSchema);
 const User = mongoose.model("User", UserSchema);
-const Message = mongoose.model("Message", MessageSchema)
 
-module.exports.author = Author;
+module.exports.Pirate = Pirate;
 module.exports.user = User;
-module.exports.message = Message;
