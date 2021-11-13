@@ -2,7 +2,7 @@ const express = require('express')
 const app = express();
 const cors = require("cors");
 
-require('./components/config/pirates.config');
+require('./config/pirates.config');
 
 app.use(cors());
 app.use(express.json(), express.urlencoded({extended:true}));
